@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KYRO — Motion Design</title>
+<meta name="description" content="KYRO is a motion designer crafting 3D, animation and VFX for brands and creators.">
+<meta name="theme-color" content="#0B0D10">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="KYRO — Motion Design">
+<meta property="og:description" content="3D, animation and VFX for brands & creators.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B0D10'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='38' fill='%23E3173A'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0D10;--fg:#F4F4F2;--red:#E3173A;--red-dark:#C40F2F;
+  --muted:#8A8F98;--soft:#B9BDC4;--line:#1C1F25;--line-2:#2A2E36;--dim:#3A3F48;
+  --gutter:clamp(16px,4vw,48px);--max:1360px;--header-h:68px;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html,body{margin:0;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased}
+body{font-family:'Archivo',system-ui,sans-serif;min-height:100vh;min-height:100dvh;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+a{color:var(--fg);text-decoration:none}
+img,video{display:block;max-width:100%}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+section[id]{scroll-margin-top:calc(var(--header-h) + 8px)}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(var(--gutter),env(safe-area-inset-left));padding-right:max(var(--gutter),env(safe-area-inset-right))}
+.mono{font-family:var(--mono)}
+.eyebrow{font-family:var(--mono);font-size:12px;color:var(--red);letter-spacing:.1em}
+.h2{margin:14px 0 0;font-weight:800;font-stretch:112%;font-size:clamp(34px,5vw,72px);line-height:1;letter-spacing:-.03em}
+
+/* Pills */
+.pill{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:background-color .2s,color .2s,border-color .2s;touch-action:manipulation}
+.pill-light{background:var(--fg);color:var(--bg)}
+.pill-ghost{border:1px solid var(--line-2)}
+.pill-red{background:var(--red);color:#fff}
+
+/* Header */
+.header{position:sticky;top:0;z-index:20;background:rgba(11,13,16,.86);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.header-in{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;flex-direction:column;line-height:1;gap:4px}
+.logo b{font-weight:800;font-size:26px;letter-spacing:.06em;color:var(--red);font-stretch:110%}
+.logo small{font-size:9px;letter-spacing:.32em;color:var(--muted)}
+.nav{display:flex;align-items:center;gap:clamp(14px,3vw,36px);font-size:14px;font-weight:500}
+.nav-link{padding:10px 0}
+.nav .pill{min-height:40px;padding:10px 18px;font-size:14px}
+.menu-btn{display:none;width:44px;height:44px;border-radius:999px;border:1px solid var(--line-2);background:transparent;color:var(--fg);cursor:pointer;align-items:center;justify-content:center;padding:0}
+.menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:16px;height:1.5px;background:currentColor;border-radius:2px;position:relative;transition:transform .25s,background-color .25s}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
+.menu-btn span::before{top:-5px}
+.menu-btn span::after{top:5px}
+.menu-open .menu-btn span{background:transparent}
+.menu-open .menu-btn span::before{transform:translateY(5px) rotate(45deg)}
+.menu-open .menu-btn span::after{transform:translateY(-5px) rotate(-45deg)}
+.mobile-menu{display:none}
+
+/* Hero */
+.hero{padding-top:clamp(40px,9vw,120px);padding-bottom:clamp(32px,5vw,48px)}
+.status{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--soft);text-transform:uppercase}
+.status i{width:8px;height:8px;border-radius:50%;background:#3DDC84;box-shadow:0 0 0 4px rgba(61,220,132,.15);flex:none}
+.hero h1{margin:24px 0 0;font-weight:800;font-stretch:115%;font-size:clamp(40px,9.5vw,152px);line-height:.92;letter-spacing:-.035em;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero-row{margin-top:clamp(24px,4vw,40px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px}
+.hero p{margin:0;max-width:460px;font-size:clamp(16px,1.6vw,18px);line-height:1.55;color:var(--soft);text-wrap:pretty}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Media frames */
+.frame{position:relative;overflow:hidden;border:1px solid var(--line);background:repeating-linear-gradient(135deg,#12151A 0 14px,#0F1216 14px 28px)}
+.frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:16px;text-align:center}
+.ph-label{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em}
+.reel{aspect-ratio:16/9;border-radius:clamp(14px,2vw,20px)}
+.reel-play{width:clamp(56px,8vw,96px);height:clamp(56px,8vw,96px);border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 clamp(8px,1.2vw,12px) rgba(227,23,58,.14)}
+.reel-play::after{content:"";border-top:clamp(9px,1.1vw,13px) solid transparent;border-bottom:clamp(9px,1.1vw,13px) solid transparent;border-left:clamp(14px,1.7vw,20px) solid #fff;margin-left:clamp(3px,.4vw,5px)}
+.reel .ph-label{font-size:clamp(10px,1.1vw,13px)}
+.reel-tag{position:absolute;left:clamp(10px,2vw,20px);bottom:clamp(10px,2vw,18px);font-family:var(--mono);font-size:clamp(10px,1vw,12px);background:rgba(11,13,16,.7);padding:6px 10px;border-radius:6px}
+
+/* Marquee */
+.marquee{margin-top:clamp(48px,8vw,96px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:clamp(16px,2vw,22px) 0}
+.mq{display:flex;width:max-content;gap:clamp(24px,3vw,40px);animation:kyroMarquee 40s linear infinite;font-weight:800;font-stretch:115%;font-size:clamp(26px,4vw,56px);letter-spacing:-.02em;white-space:nowrap;will-change:transform}
+.mq span{display:flex;align-items:center;gap:clamp(24px,3vw,40px)}
+.mq span:nth-child(odd){color:var(--dim)}
+.mq span::after{content:"✦";color:var(--red)}
+@keyframes kyroMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Work */
+.section{padding-top:clamp(56px,9vw,120px)}
+.work-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(28px,4vw,40px)}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filter{font-size:14px;font-weight:600;padding:11px 18px;min-height:44px;border-radius:999px;cursor:pointer;border:1px solid var(--line-2);background:transparent;color:var(--fg);transition:all .2s;white-space:nowrap;touch-action:manipulation}
+.filter[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.grid{columns:3 300px;column-gap:20px}
+.card{break-inside:avoid;margin-bottom:28px}
+.card[hidden]{display:none}
+.card .frame{border-radius:16px;background:repeating-linear-gradient(135deg,#12151A 0 12px,#0F1216 12px 24px);transition:border-color .25s,transform .25s}
+.card-play{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--dim);display:flex;align-items:center;justify-content:center}
+.card-play::after{content:"";border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:12px solid var(--soft);margin-left:4px}
+.tag{position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 9px;border-radius:6px;background:var(--red);color:#fff;letter-spacing:.06em}
+.card-meta{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:14px}
+.card h3{margin:0;font-size:19px;font-weight:700;letter-spacing:-.01em}
+.card-year{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.card p{margin:4px 0 0;font-size:14px;color:var(--muted)}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));border-top:1px solid var(--line);margin-top:clamp(28px,4vw,40px)}
+.service{padding:clamp(28px,3vw,36px) 28px clamp(32px,3vw,40px) 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:clamp(10px,1.4vw,16px)}
+.service span{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.service h3{margin:0;font-size:clamp(30px,3.4vw,44px);font-weight:800;font-stretch:115%;letter-spacing:-.02em}
+.service p{margin:0;font-size:16px;line-height:1.6;color:var(--soft);max-width:340px;text-wrap:pretty}
+
+/* Contact */
+.contact{padding-top:clamp(64px,11vw,160px);padding-bottom:clamp(40px,5vw,64px)}
+.contact-card{background:var(--red);border-radius:clamp(20px,2.5vw,28px);padding:clamp(28px,6vw,80px);display:flex;flex-direction:column;gap:clamp(24px,4vw,40px)}
+.contact-card .eyebrow{color:#fff}
+.contact-card h2{margin:0;font-weight:800;font-stretch:115%;font-size:clamp(42px,8vw,128px);line-height:.92;letter-spacing:-.035em;color:#fff;text-wrap:balance}
+.contact-cta{display:flex;flex-wrap:wrap;gap:12px}
+.contact-cta .pill{min-height:56px;padding:16px 28px;font-weight:700;font-size:16px}
+.pill-white{background:#fff;color:var(--bg)}
+.pill-outline{border:1.5px solid #fff;color:#fff}
+
+/* Footer */
+.footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 16px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:28px;padding-bottom:max(40px,calc(env(safe-area-inset-bottom) + 24px))}
+
+/* Hover only on real pointer devices, so taps on phones don't leave sticky hover states */
+@media (hover:hover) and (pointer:fine){
+  a:hover{color:var(--red)}
+  .pill-red:hover{background:var(--red-dark);color:#fff}
+  .pill-light:hover{background:var(--red);color:#fff}
+  .pill-ghost:hover{border-color:var(--red);color:#fff}
+  .filter[aria-selected="false"]:hover{border-color:var(--soft)}
+  .card:hover .frame{border-color:var(--red);transform:translateY(-3px)}
+  .pill-white:hover{background:var(--bg);color:#fff}
+  .pill-outline:hover{background:#fff;color:var(--bg)}
+}
+@media (hover:none){
+  .pill:active,.filter:active{transform:scale(.97)}
+}
+
+/* Phone */
+@media (max-width:720px){
+  :root{--header-h:60px}
+  .logo b{font-size:22px}
+  .logo small{font-size:8px}
+  .nav-link{display:none}
+  .menu-btn{display:inline-flex}
+  .mobile-menu{display:block;position:absolute;left:0;right:0;top:100%;background:var(--bg);box-shadow:0 24px 48px rgba(0,0,0,.5);border-bottom:1px solid var(--line);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s,transform .2s,visibility .2s}
+  .menu-open .mobile-menu{opacity:1;visibility:visible;transform:none}
+  .mobile-menu a{display:flex;justify-content:space-between;align-items:center;min-height:60px;font-size:clamp(26px,8vw,34px);font-weight:800;font-stretch:112%;letter-spacing:-.02em;border-bottom:1px solid var(--line)}
+  .mobile-menu a:last-child{border-bottom:0}
+  .mobile-menu a::after{content:"→";color:var(--red);font-weight:500}
+  .mobile-menu nav{padding-top:8px;padding-bottom:16px}
+
+  .hero h1{font-size:clamp(38px,11.5vw,64px);line-height:.95}
+  .hero h1 br{display:none}
+  .hero-cta{width:100%}
+  .hero-cta .pill{flex:1 1 0;padding-left:16px;padding-right:16px}
+
+  /* Filters become a swipeable row that bleeds to the screen edges */
+  .work-head{gap:20px}
+  .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;margin:0 calc(-1 * var(--gutter));padding:2px var(--gutter);width:calc(100% + 2 * var(--gutter))}
+  .filters::-webkit-scrollbar{display:none}
+  .filter{scroll-snap-align:start}
+
+  .grid{columns:1}
+  .card{margin-bottom:32px}
+  /* Keep tall 9:16 reels from taking more than one screen */
+  .card .frame.tall{max-height:78svh;aspect-ratio:auto!important;height:min(78svh,calc((100vw - 2 * var(--gutter)) * 16 / 9))}
+
+  .service{padding-right:0}
+  .contact-cta{flex-direction:column}
+  .contact-cta .pill{width:100%}
+  .footer{flex-direction:column}
+}
+@media (max-width:360px){
+  .hero-cta{flex-direction:column}
+  .contact-cta .pill{font-size:15px;padding-left:16px;padding-right:16px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .mq{animation:none}
+  *,*::before,*::after{transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="wrap header-in">
+    <a href="#top" class="logo" aria-label="KYRO Motion Design — home">
+      <b>KYRO</b>
+      <small>MOTION DESIGN</small>
+    </a>
+    <div class="nav">
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#contact" class="pill pill-red">Hire me</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="wrap" aria-label="Mobile">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="top" class="wrap hero">
+  <div class="status"><i></i><span>Available for work — 2026</span></div>
+  <h1>Motion design<br> for brands <em>&amp;</em> creators.</h1>
+  <div class="hero-row">
+    <p>I'm Kyro — a motion designer crafting 3D, animation and VFX that make brands move and stop the scroll.</p>
+    <div class="hero-cta">
+      <a href="#work" class="pill pill-light">View work</a>
+      <a href="#reel" class="pill pill-ghost">Watch showreel</a>
+    </div>
+  </div>
+</section>
+
+<section id="reel" class="wrap">
+  <div class="frame reel" id="reelFrame">
+    <div class="ph">
+      <div class="reel-play"></div>
+      <div class="ph-label">SHOWREEL VIDEO · 16:9 · 1920×1080</div>
+    </div>
+    <div class="reel-tag">KYRO — SHOWREEL 2026</div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="mq" id="marquee"></div></div>
+
+<section id="work" class="wrap section">
+  <div class="work-head">
+    <div>
+      <div class="eyebrow">01 / SELECTED WORK</div>
+      <h2 class="h2">Recent projects</h2>
+    </div>
+    <div class="filters" role="tablist" aria-label="Filter projects" id="filters"></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="services" class="wrap section">
+  <div class="eyebrow">02 / SERVICES</div>
+  <h2 class="h2">What I do</h2>
+  <div class="services">
+    <div class="service">
+      <span>(01)</span>
+      <h3>3D</h3>
+      <p>Product renders, stylized scenes and CGI ads built for launches and social.</p>
+    </div>
+    <div class="service">
+      <span>(02)</span>
+      <h3>Animation</h3>
+      <p>Logo reveals, kinetic type, explainers and motion systems for brands.</p>
+    </div>
+    <div class="service">
+      <span>(03)</span>
+      <h3>VFX</h3>
+      <p>Compositing, CGI integration and effects for creators and music videos.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="wrap contact">
+  <div class="contact-card">
+    <div class="eyebrow">03 / CONTACT</div>
+    <h2>Let's make it move.</h2>
+    <div class="contact-cta">
+      <a href="mailto:hello@madebykyro.com" class="pill pill-white">hello@madebykyro.com</a>
+      <a href="https://instagram.com/made.by.kyro" target="_blank" rel="noopener" class="pill pill-outline">Instagram @made.by.kyro</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap footer">
+  <span>© 2026 KYRO Motion Design</span>
+  <span class="mono">3D • Animation • VFX</span>
+</footer>
+
+<script>
+// ---- Content: drop video URLs here (e.g. "videos/reel.mp4") ----
+const SHOWREEL_SRC = '';
+const PROJECTS = [
+  { title: 'Product Launch Film',  client: 'Brand campaign',     cat: '3D',        year: '2026', ratio: '16/9', video: '' },
+  { title: 'Creator Reel Intro',   client: 'Social / Reels',     cat: 'ANIMATION', year: '2026', ratio: '9/16', video: '' },
+  { title: 'Logo Reveal',          client: 'Brand identity',     cat: 'ANIMATION', year: '2025', ratio: '1/1',  video: '' },
+  { title: 'CGI Social Ad',        client: 'Instagram campaign', cat: 'VFX',       year: '2025', ratio: '4/5',  video: '' },
+  { title: 'Abstract Loop Series', client: 'Personal work',      cat: '3D',        year: '2025', ratio: '1/1',  video: '' },
+  { title: 'Music Video FX',       client: 'Artist collab',      cat: 'VFX',       year: '2025', ratio: '16/9', video: '' },
+  { title: 'Kinetic Typography',   client: 'Event promo',        cat: 'ANIMATION', year: '2024', ratio: '9/16', video: '' },
+  { title: 'Product Turntable',    client: 'E-commerce',         cat: '3D',        year: '2024', ratio: '4/5',  video: '' },
+];
+const FILTERS = ['All', '3D', 'Animation', 'VFX'];
+const MARQUEE = ['MOTION DESIGN', '3D', 'ANIMATION', 'VFX', 'FOR BRANDS & CREATORS'];
+
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+// Videos only load and play while on screen — saves mobile data and battery.
+const videoObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+  for (const { target: v, isIntersecting } of entries) {
+    if (isIntersecting) {
+      if (!v.src) v.src = v.dataset.src;
+      if (!reduceMotion) v.play().catch(() => {});
+    } else {
+      v.pause();
+    }
+  }
+}, { rootMargin: '200px 0px' }) : null;
+
+function makeVideo(src) {
+  const v = document.createElement('video');
+  v.muted = true; v.loop = true; v.playsInline = true;
+  v.setAttribute('playsinline', ''); v.setAttribute('muted', '');
+  v.preload = 'none';
+  if (reduceMotion) v.controls = true;
+  if (videoObserver) { v.dataset.src = src; videoObserver.observe(v); }
+  else { v.src = src; v.autoplay = !reduceMotion; }
+  return v;
+}
+
+// Showreel
+if (SHOWREEL_SRC.trim()) {
+  const frame = document.getElementById('reelFrame');
+  frame.querySelector('.ph').remove();
+  frame.prepend(makeVideo(SHOWREEL_SRC.trim()));
+}
+
+// Marquee
+const row = [...MARQUEE, ...MARQUEE, ...MARQUEE, ...MARQUEE];
+document.getElementById('marquee').innerHTML = row.map(t => `<span>${esc(t)}</span>`).join('');
+
+// Project grid
+const grid = document.getElementById('grid');
+grid.innerHTML = PROJECTS.map((p, i) => {
+  const shape = p.ratio === '9/16' ? 'REEL VIDEO' : 'PROJECT VIDEO';
+  return `<article class="card" data-cat="${esc(p.cat)}">
+    <div class="frame${p.ratio === '9/16' ? ' tall' : ''}" style="aspect-ratio:${esc(p.ratio)}" data-i="${i}">
+      ${p.video ? '' : `<div class="ph"><div class="card-play"></div><div class="ph-label">${shape} · ${esc(p.ratio.replace('/', ':'))}</div></div>`}
+      <div class="tag">${esc(p.cat)}</div>
+    </div>
+    <div class="card-meta"><h3>${esc(p.title)}</h3><span class="card-year">${esc(p.year)}</span></div>
+    <p>${esc(p.client)}</p>
+  </article>`;
+}).join('');
+grid.querySelectorAll('.frame[data-i]').forEach(f => {
+  const p = PROJECTS[f.dataset.i];
+  if (p.video) f.prepend(makeVideo(p.video));
+});
+
+// Filters
+const filtersEl = document.getElementById('filters');
+filtersEl.innerHTML = FILTERS.map((f, i) =>
+  `<button class="filter" role="tab" aria-selected="${i === 0}" data-f="${esc(f)}">${esc(f)}</button>`).join('');
+filtersEl.addEventListener('click', e => {
+  const btn = e.target.closest('.filter');
+  if (!btn) return;
+  const f = btn.dataset.f;
+  filtersEl.querySelectorAll('.filter').forEach(b => b.setAttribute('aria-selected', b === btn));
+  btn.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
+  grid.querySelectorAll('.card').forEach(c => { c.hidden = !(f === 'All' || c.dataset.cat === f.toUpperCase()); });
+});
+
+// Mobile menu
+const header = document.getElementById('header');
+const menuBtn = document.getElementById('menuBtn');
+function setMenu(open) {
+  header.classList.toggle('menu-open', open);
+  menuBtn.setAttribute('aria-expanded', open);
+  menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+}
+menuBtn.addEventListener('click', () => setMenu(!header.classList.contains('menu-open')));
+document.getElementById('mobileMenu').addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+document.addEventListener('click', e => { if (!header.contains(e.target)) setMenu(false); });
+matchMedia('(min-width: 721px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+</script>
+</body>
+</html>

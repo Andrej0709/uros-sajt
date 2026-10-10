@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#0B0D10;color:#F4F4F2;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#F4F4F2;text-decoration:none}
+a:hover{color:#E3173A}
+@keyframes kyroMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.kyro-mq{animation:none!important}}
+</style>
+<template id="__bundler_thumbnail" data-bg-color="#0B0D10"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><text x="600" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="200" fill="#E3173A">KYRO</text></svg></template>
+</helmet>
+<div style="font-family:'Archivo',system-ui,sans-serif;min-height:100vh;background:#0B0D10;">
+
+<header style="position:sticky;top:0;z-index:20;background:rgba(11,13,16,0.86);backdrop-filter:blur(12px);border-bottom:1px solid #1C1F25;">
+  <div style="max-width:1360px;margin:0 auto;padding:16px clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px;">
+    <a href="#top" style="display:flex;flex-direction:column;line-height:1;gap:4px;">
+      <span style="font-weight:800;font-size:26px;letter-spacing:0.06em;color:#E3173A;font-stretch:110%;">KYRO</span>
+      <span style="font-size:9px;letter-spacing:0.32em;color:#8A8F98;">MOTION DESIGN</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:clamp(14px,3vw,36px);font-size:14px;font-weight:500;">
+      <a href="#work" style="padding:10px 0;">Work</a>
+      <a href="#services" style="padding:10px 0;">Services</a>
+      <a href="#contact" style="padding:10px 0;">Contact</a>
+      <a href="#contact" style="display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:#E3173A;color:#fff;font-weight:600;" style-hover="background:#C40F2F;color:#fff">Hire me</a>
+    </nav>
+  </div>
+</header>
+
+<section id="top" style="max-width:1360px;margin:0 auto;padding:clamp(56px,9vw,120px) clamp(20px,4vw,48px) 48px;">
+  <div style="display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;color:#B9BDC4;text-transform:uppercase;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#3DDC84;box-shadow:0 0 0 4px rgba(61,220,132,0.15);"></span>
+    <span>Available for work — 2026</span>
+  </div>
+  <h1 style="margin:28px 0 0;font-weight:800;font-stretch:115%;font-size:clamp(48px,9.5vw,152px);line-height:0.92;letter-spacing:-0.035em;text-wrap:balance;">
+    Motion design<br>for brands <span style="color:#E3173A;">&amp;</span> creators.
+  </h1>
+  <div style="margin-top:40px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;">
+    <p style="margin:0;max-width:460px;font-size:18px;line-height:1.55;color:#B9BDC4;text-wrap:pretty;">I'm Kyro — a motion designer crafting 3D, animation and VFX that make brands move and stop the scroll.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="#work" style="padding:16px 26px;border-radius:999px;background:#F4F4F2;color:#0B0D10;font-weight:600;font-size:15px;" style-hover="background:#E3173A;color:#fff">View work</a>
+      <a href="#reel" style="padding:16px 26px;border-radius:999px;border:1px solid #2A2E36;font-weight:600;font-size:15px;" style-hover="border-color:#E3173A;color:#fff">Watch showreel</a>
+    </div>
+  </div>
+</section>
+
+<section id="reel" style="max-width:1360px;margin:0 auto;padding:0 clamp(20px,4vw,48px);">
+  <div style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid #1C1F25;background:repeating-linear-gradient(135deg,#12151A 0 14px,#0F1216 14px 28px);">
+    <sc-if value="{{ hasReel }}" hint-placeholder-val="{{ false }}">
+      <video src="{{ showreelSrc }}" autoplay="" muted="" loop="" playsinline="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    </sc-if>
+    <sc-if value="{{ noReel }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;">
+        <div style="width:clamp(64px,8vw,96px);height:clamp(64px,8vw,96px);border-radius:50%;background:#E3173A;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px rgba(227,23,58,0.14);">
+          <div style="width:0;height:0;border-top:13px solid transparent;border-bottom:13px solid transparent;border-left:20px solid #fff;margin-left:5px;"></div>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8A8F98;letter-spacing:0.06em;text-align:center;">SHOWREEL VIDEO · 16:9 · 1920×1080</div>
+      </div>
+    </sc-if>
+    <div style="position:absolute;left:20px;bottom:18px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#F4F4F2;background:rgba(11,13,16,0.7);padding:6px 10px;border-radius:6px;">KYRO — SHOWREEL 2026</div>
+  </div>
+</section>
+
+<div style="margin-top:clamp(56px,8vw,96px);border-top:1px solid #1C1F25;border-bottom:1px solid #1C1F25;overflow:hidden;padding:22px 0;">{{ marquee }}</div>
+
+<section id="work" style="max-width:1360px;margin:0 auto;padding:clamp(64px,9vw,120px) clamp(20px,4vw,48px) 0;">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px;">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E3173A;letter-spacing:0.1em;">01 / SELECTED WORK</div>
+      <h2 style="margin:14px 0 0;font-weight:800;font-stretch:112%;font-size:clamp(36px,5vw,72px);line-height:1;letter-spacing:-0.03em;">Recent projects</h2>
+    </div>
+    <div role="tablist" style="display:flex;gap:8px;flex-wrap:wrap;">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+        <button role="tab" aria-selected="{{ f.active }}" onClick="{{ f.select }}" style="font-family:inherit;font-size:14px;font-weight:600;padding:11px 18px;min-height:44px;border-radius:999px;cursor:pointer;border:1px solid {{ f.border }};background:{{ f.bg }};color:{{ f.fg }};transition:all .2s;">{{ f.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="columns:3 300px;column-gap:20px;">
+    <sc-for list="{{ shown }}" as="p" hint-placeholder-count="6">
+      <article style="break-inside:avoid;margin-bottom:28px;cursor:pointer;" style-hover="opacity:1">
+        <div style="position:relative;aspect-ratio:{{ p.ratio }};border-radius:16px;overflow:hidden;border:1px solid #1C1F25;background:repeating-linear-gradient(135deg,#12151A 0 12px,#0F1216 12px 24px);transition:border-color .25s,transform .25s;" style-hover="border-color:#E3173A;transform:translateY(-3px)">
+          <sc-if value="{{ p.hasVideo }}" hint-placeholder-val="{{ false }}">
+            <video src="{{ p.video }}" autoplay="" muted="" loop="" playsinline="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+          </sc-if>
+          <sc-if value="{{ p.noVideo }}" hint-placeholder-val="{{ true }}">
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:16px;">
+              <div style="width:52px;height:52px;border-radius:50%;border:1.5px solid #3A3F48;display:flex;align-items:center;justify-content:center;">
+                <div style="width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:12px solid #B9BDC4;margin-left:4px;"></div>
+              </div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8F98;letter-spacing:0.06em;text-align:center;">{{ p.slot }}</div>
+            </div>
+          </sc-if>
+          <div style="position:absolute;top:14px;left:14px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;padding:5px 9px;border-radius:6px;background:#E3173A;color:#fff;letter-spacing:0.06em;">{{ p.cat }}</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:14px;">
+          <h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-0.01em;">{{ p.title }}</h3>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8A8F98;">{{ p.year }}</span>
+        </div>
+        <p style="margin:4px 0 0;font-size:14px;color:#8A8F98;">{{ p.client }}</p>
+      </article>
+    </sc-for>
+  </div>
+</section>
+
+<section id="services" style="max-width:1360px;margin:0 auto;padding:clamp(64px,9vw,120px) clamp(20px,4vw,48px) 0;">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#E3173A;letter-spacing:0.1em;">02 / SERVICES</div>
+  <h2 style="margin:14px 0 40px;font-weight:800;font-stretch:112%;font-size:clamp(36px,5vw,72px);line-height:1;letter-spacing:-0.03em;">What I do</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));border-top:1px solid #1C1F25;">
+    <div style="padding:36px 28px 40px 0;border-bottom:1px solid #1C1F25;display:flex;flex-direction:column;gap:16px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8A8F98;">(01)</span>
+      <h3 style="margin:0;font-size:clamp(32px,3.4vw,44px);font-weight:800;font-stretch:115%;letter-spacing:-0.02em;">3D</h3>
+      <p style="margin:0;font-size:16px;line-height:1.6;color:#B9BDC4;max-width:340px;text-wrap:pretty;">Product renders, stylized scenes and CGI ads built for launches and social.</p>
+    </div>
+    <div style="padding:36px 28px 40px 0;border-bottom:1px solid #1C1F25;display:flex;flex-direction:column;gap:16px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8A8F98;">(02)</span>
+      <h3 style="margin:0;font-size:clamp(32px,3.4vw,44px);font-weight:800;font-stretch:115%;letter-spacing:-0.02em;">Animation</h3>
+      <p style="margin:0;font-size:16px;line-height:1.6;color:#B9BDC4;max-width:340px;text-wrap:pretty;">Logo reveals, kinetic type, explainers and motion systems for brands.</p>
+    </div>
+    <div style="padding:36px 28px 40px 0;border-bottom:1px solid #1C1F25;display:flex;flex-direction:column;gap:16px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#8A8F98;">(03)</span>
+      <h3 style="margin:0;font-size:clamp(32px,3.4vw,44px);font-weight:800;font-stretch:115%;letter-spacing:-0.02em;">VFX</h3>
+      <p style="margin:0;font-size:16px;line-height:1.6;color:#B9BDC4;max-width:340px;text-wrap:pretty;">Compositing, CGI integration and effects for creators and music videos.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="max-width:1360px;margin:0 auto;padding:clamp(80px,11vw,160px) clamp(20px,4vw,48px) 64px;">
+  <div style="background:#E3173A;border-radius:28px;padding:clamp(36px,6vw,80px);display:flex;flex-direction:column;gap:40px;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#fff;letter-spacing:0.1em;">03 / CONTACT</div>
+    <h2 style="margin:0;font-weight:800;font-stretch:115%;font-size:clamp(44px,8vw,128px);line-height:0.92;letter-spacing:-0.035em;color:#fff;text-wrap:balance;">Let's make it move.</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;">
+      <a href="mailto:hello@madebykyro.com" style="padding:18px 28px;border-radius:999px;background:#fff;color:#0B0D10;font-weight:700;font-size:16px;" style-hover="background:#0B0D10;color:#fff">hello@madebykyro.com</a>
+      <a href="https://instagram.com/made.by.kyro" target="_blank" style="padding:18px 28px;border-radius:999px;border:1.5px solid #fff;color:#fff;font-weight:700;font-size:16px;" style-hover="background:#fff;color:#0B0D10">Instagram @made.by.kyro</a>
+    </div>
+  </div>
+</section>
+
+<footer style="max-width:1360px;margin:0 auto;padding:28px clamp(20px,4vw,48px) 40px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:13px;color:#8A8F98;border-top:1px solid #1C1F25;">
+  <span>© 2026 KYRO Motion Design</span>
+  <span style="font-family:'JetBrains Mono',monospace;">3D • Animation • VFX</span>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showreelSrc&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showMarquee&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { filter: 'All' };
+  projects = [
+    { title: 'Product Launch Film', client: 'Brand campaign', cat: '3D', year: '2026', ratio: '16/9', slot: 'PROJECT VIDEO · 16:9' },
+    { title: 'Creator Reel Intro', client: 'Social / Reels', cat: 'ANIMATION', year: '2026', ratio: '9/16', slot: 'REEL VIDEO · 9:16' },
+    { title: 'Logo Reveal', client: 'Brand identity', cat: 'ANIMATION', year: '2025', ratio: '1/1', slot: 'PROJECT VIDEO · 1:1' },
+    { title: 'CGI Social Ad', client: 'Instagram campaign', cat: 'VFX', year: '2025', ratio: '4/5', slot: 'PROJECT VIDEO · 4:5' },
+    { title: 'Abstract Loop Series', client: 'Personal work', cat: '3D', year: '2025', ratio: '1/1', slot: 'PROJECT VIDEO · 1:1' },
+    { title: 'Music Video FX', client: 'Artist collab', cat: 'VFX', year: '2025', ratio: '16/9', slot: 'PROJECT VIDEO · 16:9' },
+    { title: 'Kinetic Typography', client: 'Event promo', cat: 'ANIMATION', year: '2024', ratio: '9/16', slot: 'REEL VIDEO · 9:16' },
+    { title: 'Product Turntable', client: 'E-commerce', cat: '3D', year: '2024', ratio: '4/5', slot: 'PROJECT VIDEO · 4:5' },
+  ];
+  renderVals() {
+    const f = this.state.filter;
+    const filters = ['All', '3D', 'Animation', 'VFX'].map(label => {
+      const active = label === f;
+      return { label, active, select: () => this.setState({ filter: label }),
+        bg: active ? '#F4F4F2' : 'transparent', fg: active ? '#0B0D10' : '#F4F4F2', border: active ? '#F4F4F2' : '#2A2E36' };
+    });
+    const shown = this.projects.filter(p => f === 'All' || p.cat === f.toUpperCase())
+      .map(p => ({ ...p, hasVideo: !!p.video, noVideo: !p.video }));
+    const src = (this.props.showreelSrc || '').trim();
+    const items = ['MOTION DESIGN', '3D', 'ANIMATION', 'VFX', 'FOR BRANDS & CREATORS'];
+    const row = [...items, ...items, ...items, ...items];
+    const marquee = this.props.showMarquee === false ? null : React.createElement('div', {
+      className: 'kyro-mq',
+      style: { display: 'flex', width: 'max-content', gap: 40, animation: 'kyroMarquee 40s linear infinite', fontWeight: 800, fontStretch: '115%', fontSize: 'clamp(28px,4vw,56px)', letterSpacing: '-0.02em', whiteSpace: 'nowrap' }
+    }, row.map((t, i) => React.createElement('span', { key: i, style: { display: 'flex', alignItems: 'center', gap: 40, color: i % 2 ? '#F4F4F2' : '#3A3F48' } }, t, React.createElement('span', { style: { color: '#E3173A' } }, '✦'))));
+    return { filters, shown, marquee, showreelSrc: src, hasReel: !!src, noReel: !src };
+  }
+}
+</script>
+</body>
+</html>
